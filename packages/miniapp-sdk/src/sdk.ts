@@ -2,6 +2,7 @@ import {
   AddMiniApp,
   type MiniAppClientEvent,
   SignIn,
+  SignManifest,
 } from '@farcaster/miniapp-core'
 import { createBack } from './back.ts'
 import { ethereumProvider, getEthereumProvider } from './ethereumProvider.ts'
@@ -119,6 +120,26 @@ export const sdk: MiniAppSDK = {
   },
   experimental: {
     getSolanaProvider,
+    signManifest: async (options) => {
+      const response = await miniAppHost.signManifest(options)
+      if (response.result) {
+        return response.result
+      }
+
+      if (response.error.type === 'rejected_by_user') {
+        throw new SignManifest.RejectedByUser()
+      }
+
+      if (response.error.type === 'invalid_domain') {
+        throw new SignManifest.InvalidDomain()
+      }
+
+      if (response.error.type === 'generic_error') {
+        throw new SignManifest.GenericError(response.error.message)
+      }
+
+      throw new Error('Unreachable')
+    },
     quickAuth(options) {
       return quickAuth.getToken(options)
     },

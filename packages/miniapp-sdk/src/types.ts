@@ -14,6 +14,7 @@ import type {
   SendToken,
   SetPrimaryButtonOptions,
   SignIn,
+  SignManifest,
   SolanaWalletProvider,
   SwapToken,
   ViewCast,
@@ -93,6 +94,7 @@ export type MiniAppSDK = {
   }
   experimental: {
     getSolanaProvider: () => Promise<SolanaWalletProvider | undefined>
+    signManifest: SignManifest.SignManifest
 
     /**
      * @deprecated - use `sdk.quickAuth.getToken`
