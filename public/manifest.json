@@ -1,0 +1,117 @@
+{
+  "name": "AMPLIFY - Music Streaming Platform",
+  "short_name": "AMPLIFY",
+  "description": "Stream music and earn AMPL tokens. Connect your wallet and start earning today.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#ef4444",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["music", "entertainment", "finance"],
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.jpg",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-96x96.jpg",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-128x128.jpg",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-144x144.jpg",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-152x152.jpg",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192x192.jpg",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-384x384.jpg",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Listen to Music",
+      "short_name": "Listen",
+      "description": "Start listening to music and earning AMPL tokens",
+      "url": "/?action=play",
+      "icons": [
+        {
+          "src": "/icons/play-shortcut.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "View Rewards",
+      "short_name": "Rewards",
+      "description": "Check your AMPL token rewards",
+      "url": "/rewards",
+      "icons": [
+        {
+          "src": "/icons/rewards-shortcut.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Leaderboard",
+      "short_name": "Leaderboard",
+      "description": "View top listeners and tracks",
+      "url": "/leaderboard",
+      "icons": [
+        {
+          "src": "/icons/leaderboard-shortcut.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "AMPLIFY Home Screen"
+    },
+    {
+      "src": "/screenshots/mobile-player.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Music Player with Rewards"
+    }
+  ]
+}

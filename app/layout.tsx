@@ -13,6 +13,14 @@ export const metadata: Metadata = {
   description:
     "Amplify your listening. Stream music and get rewarded with AMPL tokens. Connect your wallet and start earning today.",
   generator: "v0.app",
+  manifest: "/manifest.json",
+  themeColor: "#ef4444",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "AMPLIFY",
+  },
 }
 
 export default function RootLayout({
@@ -22,6 +30,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#ef4444" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="AMPLIFY" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.jpg" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                      console.log('[PWA] SW registered: ', registration);
+                    }, function(err) {
+                      console.log('[PWA] SW registration failed: ', err);
+                    });
+                });
+              }
+            `,
+          }}
+        />
+      </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <WalletProvider>
           <RewardsProvider>
