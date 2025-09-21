@@ -1,8 +1,0 @@
-{
-  "extends": "@farcaster/tsconfig/browser.json",
-  "include": ["src"],
-  "exclude": ["dist", "build", "node_modules"],
-  "compilerOptions": {
-    "outDir": "dist"
-  }
-}
